@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guided Tour Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        header, footer {
+            background-color: #f4f4f4;
+            padding: 10px 0;
+            text-align: center;
+        }
+        section {
+            margin: 20px 0;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        .highlight {
+            border: 2px solid #007bff;
+            position: relative;
+            padding: 10px;
+            background-color: #e7f1ff;
+        }
+        .highlight:after {
+            content: '';
+            position: absolute;
+            border: 10px solid transparent;
+            border-top-color: #007bff;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .tour-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            font-size: 18px;
+            text-align: center;
+            z-index: 9999;
+        }
+        .tour-overlay button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: none;
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1>Tekion store</h1>
+</header>
+
+<div class="container">
+    <section id="section1">
+        <h2>Section 1: Introduction</h2>
+        <p>This is the introduction section. Here you can explain the purpose of the application.</p>
+    </section>
+
+    <section id="section2">
+        <h2>Section 2: Features</h2>
+        <p>In this section, describe the main features of your application.</p>
+    </section>
+
+    <section id="section3">
+        <h2>Section 3: How to Use</h2>
+        <p>Provide instructions on how to use the application in this section.</p>
+    </section>
+
+    <section id="section4">
+        <h2>Section 4: Contact</h2>
+        <p>Let users know how they can contact support or provide feedback.</p>
+    </section>
+</div>
+<script>
+    (function(apiKey){
+        (function(p,e,n,d,o){var v,w,x,y,z;o=p[d]=p[d]||{};o._q=o._q||[];
+            v=['initialize','identify','updateOptions','pageLoad','track'];for(w=0,x=v.length;w<x;++w)(function(m){
+                o[m]=o[m]||function(){o._q[m===v[0]?'unshift':'push']([m].concat([].slice.call(arguments,0)));};})(v[w]);
+            y=e.createElement(n);y.async=!0;y.src='https://cdn.pendo.io/agent/static/'+apiKey+'/pendo.js';
+            z=e.getElementsByTagName(n)[0];z.parentNode.insertBefore(y,z);})(window,document,'script','pendo');
+    })('6805ff02-760e-4944-4be2-d43df138fdcf');
+
+    pendo.initialize({
+        visitor : {
+            id: "visitor_id"
+        },
+        account: {
+            id: "account_id"
+
+        }
+    })
+</script>
+</body>
+</html>
